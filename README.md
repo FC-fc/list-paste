@@ -27,6 +27,8 @@ etc.
 
 # Default Settings
 ### settings.fc
+*input file* , *application name*
+
     data.txt,Untitled - Notepad
 ### data.txt:
     1
