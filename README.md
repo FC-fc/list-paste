@@ -3,7 +3,7 @@
 2. Create desktop shortcuts for __paste-help.exe__ and __data.txt__.
 
 
-## How to create a desktop shortcu
+## How to create a desktop shortcut
 1. Click the Windows key or open File Explorer and browse to the program for which you want to create a desktop shortcut.
 
 2. Left-click the name of the program, and drag it onto your desktop.
