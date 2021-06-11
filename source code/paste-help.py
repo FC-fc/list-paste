@@ -52,7 +52,7 @@ if __name__ == "__main__":
     for line in data:
         for char in line:
             keyboard.press(char)
-        keyboard.press(Key.enter)
-        #keyboard.press(Key.down)
+        #keyboard.press(Key.enter)
+        keyboard.press(Key.down)
     log('session end')
     
