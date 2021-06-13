@@ -4,6 +4,8 @@
 from pynput.keyboard import Key, Controller
 from pywinauto.application import Application
 from datetime import datetime
+import sys
+import time
 
 def read_file(file_name):
     # read data 
@@ -25,6 +27,16 @@ def log(output):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        try:
+            wait = float(sys.argv[-1])
+        except:
+            print(f"Error: Invalid wait time {sys.argv[-1]}")
+            log(f"Error: Invalid wait time {sys.argv[-1]}")
+            exit()
+    else:
+        wait = 0
+
     log("session start")
 
     # get filenames
@@ -36,7 +48,7 @@ if __name__ == "__main__":
 
     # setup reference
     try:
-        app = Application().connect(title=app_name)
+        app = Application().connect(title='Book1 - Excel')
     except:
         log('Error: app not found')
         print(f"Error: {app_name} not found")
@@ -50,9 +62,17 @@ if __name__ == "__main__":
 
     # print output
     for line in data:
-        for char in line:
-            keyboard.press(char)
-        #keyboard.press(Key.enter)
+        keyboard.type(line)
+        if wait: time.sleep(wait)
         keyboard.press(Key.down)
+        keyboard.release(Key.down)
+        if wait: time.sleep(wait)
+        keyboard.press(Key.down)
+        keyboard.release(Key.down)
+        if wait: time.sleep(wait)
+        keyboard.press(Key.up)
+        keyboard.release(Key.up)
+        if wait: time.sleep(wait)
+
     log('session end')
     
