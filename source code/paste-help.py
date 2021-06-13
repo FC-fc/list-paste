@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     # setup reference
     try:
-        app = Application().connect(title='Book1 - Excel')
+        app = Application().connect(title=app_name)
     except:
         log('Error: app not found')
         print(f"Error: {app_name} not found")
